@@ -8,8 +8,8 @@
      schema: gz_raw_data
      tables:
        - name: sales
-         identifier: gw_raw-sales
+         identifier: raw_gz-sales
        - name: product
-         identifier: gw_raw_product
+         identifier: raw_gz_product
        - name: ship
-         identifier: gw_raw_ship
+         identifier: raw_gz_ship
