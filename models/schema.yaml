@@ -3,8 +3,12 @@
  version: 2
 
  sources:
-   - name: raw_data
+   - name: gz_raw_data
+   - identifier : gz_raw_data
      tables:
        - name: sales
+       - identifier : gz_raw_sales
        - name: product
+       - identifier : gz_raw_product
        - name: ship
+       - identifier : gz_raw_ship
