@@ -15,6 +15,7 @@ SELECT
     logcost,
     ship_cost,
     margin,
-    (margin + shipping_fee - logcost - ship_cost) AS operational_margin
+    ROUND((margin+shipping_fee-logcost-ship_cost),2) AS operational_margin
 FROM sub_ship
+ORDER BY orders_id DESC
 
