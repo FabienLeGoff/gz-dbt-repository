@@ -54,4 +54,4 @@
           - name: ship_cost
             description: price of the ship
           - name: diff
-            description: difference between shipping_fee and shipping_fee_1 
+            description: difference between shipping_fee and shipping_fee_1
