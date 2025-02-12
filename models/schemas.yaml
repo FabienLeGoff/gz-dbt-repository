@@ -1,0 +1,57 @@
+ #Comment définir les sources
+ # schema.yml
+
+ version: 2
+
+ sources:
+   - name: raw
+     schema: gz_raw_data
+     tables:
+       - name: sales
+         identifier: raw_gz-sales
+         description: sales of Greenweez / we have on row per products_id found in each orders_id
+         columns:
+          - name: date_date
+            description: date of purchase
+            tests:
+              - not_null 
+          - name: orders_id
+            description: order number
+          - name: products_id
+            description: product number
+          - name: revenue
+            description: money earn
+          - name: quantity
+            description: number of product sold
+       - name: product
+         identifier: raw_gz_product
+         description: product of Greenweez / we have on row per products_id
+         columns:
+          - name: products_id
+            description: product number
+            tests:
+              - unique:
+                  column_name: products_id
+              - not_null
+          - name: purchase_price
+            description: price of the product
+       - name: ship
+         identifier: raw_gz_ship
+         description: ship of Greenweez / we have on row per orders_id
+         columns:
+          - name: orders_id
+            description: order number
+            tests:
+              - unique:
+                  column_name: orders_id
+              - not_null
+          - name: shipping_fee
+            description: price of the ship
+          - name: shipping_fee_1
+            description: price of the ship bis
+          - name: log_cost
+            description: price of the logistic
+          - name: ship_cost
+            description: price of the ship
+          - name: diff
+            description: difference between shipping_fee and shipping_fee_1
